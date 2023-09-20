@@ -1,0 +1,89 @@
+.id{
+    padding-left: 1rem;
+    font-size: 15px;
+}
+
+.all{
+    // padding: 2rem;
+    font-size: 15px; 
+}
+
+.profile{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    // margin-left: 20px;
+    // justify-content: center;
+    position: static;
+}
+
+.body{
+    // margin-top: 18rem;
+    // min-height: fit-content;
+    border-radius: 12px;
+    margin-top: 100px;
+    padding-bottom: 56px;
+
+    .icon{
+      margin-bottom: 11px;
+      margin-left: 44px;
+    }
+}
+
+.header{
+    background-color: #f4cb00;
+    // height: 400px;
+    z-index: -1;
+    text-align: center;
+
+    .winnersilver{
+      width: 89px;
+      height:82.56px;
+      position: relative;
+      left: 98px;
+      bottom: 700spx;
+    }
+
+    .winnerbronze{
+      width: 55.11px;
+      height:55.11px;
+      position: relative;
+      left: 370px;
+      bottom: 160px;
+    }
+
+    .Goldmedal{
+      margin-left: 90px;
+      position: relative;
+      bottom: 50px;
+    }
+}
+
+.container{
+//   flex: auto;
+  color: black;
+//   background-color: #f4cb00;
+
+  .text{
+    font-size: 11px;
+  }
+}
+
+.winner{
+    width: 100px;
+    height:100px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0px 9px 10px grey;
+
+    p{
+     width: 177px;   
+     height: 24px;
+     font-size: 16px;
+     font-weight: 600;
+    }
+}
+
+.back{
+  flex-direction: column;
+}
