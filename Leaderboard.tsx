@@ -1,131 +1,87 @@
+import React from 'react'
+import { Avatar, Container, Stack, Typography } from '@mui/material'
+import BasicTable from './Tabledata'
+import DenseTable from './Table'
+// import DenseTable2 from './Table2'
+import Datatable from './Datatable'
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import * as React from 'react';
 import Styles from './Home.module.scss';
-import Avatar from '@mui/material/Avatar';
-import { BackArrow } from 'assets/icons';
-import { GoldMedal } from 'assets/icons';
-// import SwipeableViews from 'react-swipeable-views';
-// import { useTheme } from '@mui/material/styles';
-// import AppBar from '@mui/material/AppBar';
-// import Tabs from '@mui/material/Tabs';
-// import Tab from '@mui/material/Tab';
-// import Typography from '@mui/material/Typography';
-// import Box from '@mui/material/Box';
+import { BackArrow, Clock, Winner2, Winner3 } from 'assets/icons'
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
 
-// interface TabPanelProps {
-//   children?: React.ReactNode;
-//   dir?: string;
-//   index: number;
-//   value: number;
-// }
-
-// function TabPanel(props: TabPanelProps) {
-//   const { children, value, index, ...other } = props;
-
-//   return (
-//     <div
-//       role="tabpanel"
-//       hidden={value !== index}
-//       id={`full-width-tabpanel-${index}`}
-//       aria-labelledby={`full-width-tab-${index}`}
-//       {...other}
-//     >
-//       {value === index && (
-//         <Box sx={{ p: 3 }}>
-//           <Typography>{children}</Typography>
-//         </Box>
-//       )}
-//     </div>
-//   );
-// }
-
-// function a11yProps(index: number) {
-//   return {
-//     id: `full-width-tab-${index}`,
-//     'aria-controls': `full-width-tabpanel-${index}`,
-//   };
-// }
-
-// export default function FullWidthTabs() {
-//   const theme = useTheme();
-//   const [value, setValue] = React.useState(0);
-
-//   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-//     setValue(newValue);
-//   };
-
-//   const handleChangeIndex = (index: number) => {
-//     setValue(index);
-//   };
-
-//   return (
-//     <Box sx={{ bgcolor: 'background.paper', width: 500 }}>
-//       <AppBar position="static">
-//         <Tabs
-//           value={value}
-//           onChange={handleChange}
-//           indicatorColor="secondary"
-//           textColor="inherit"
-//           variant="fullWidth"
-//           aria-label="full width tabs example"
-//         >
-//           <Tab label="Item One" {...a11yProps(0)} />
-//           <Tab label="Item Two" {...a11yProps(1)} />
-//           <Tab label="Item Three" {...a11yProps(2)} />
-//         </Tabs>
-//       </AppBar>
-//       <SwipeableViews
-//         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-//         index={value}
-//         onChangeIndex={handleChangeIndex}
-//       >
-//         <TabPanel value={value} index={0} dir={theme.direction}>
-//           Item One
-//         </TabPanel>
-//         <TabPanel value={value} index={1} dir={theme.direction}>
-//           Item Two
-//         </TabPanel>
-//         <TabPanel value={value} index={2} dir={theme.direction}>
-//           Item Three
-//         </TabPanel>
-//       </SwipeableViews>
-//     </Box>
-//   );
-// }
 const Leaderboard = () => {
-    const [alignment, setAlignment] = React.useState('individual');
+  const [value, setValue] = React.useState('individual');
 
-    const handleChange = (
-        event: React.MouseEvent<HTMLElement>,
-        newAlignment: string,
-      ) => {
-        setAlignment(newAlignment);
-      };
+  const handleChange = (
+      event: React.MouseEvent, newValue: string,
+    ) => {
+      setValue(newValue);
+    };
 
-    return (
-        <>
-            <div className={Styles.header}>
-              <BackArrow />
-               <h3>Leaderboard UT Fresh</h3>
-            <ToggleButtonGroup
-            value={alignment}
+    const Item = styled(Paper)(({ theme }) => ({
+      // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+      // ...theme.typography.body2,
+      padding: theme.spacing(1),
+      textAlign: 'center',
+    }));
+
+ return (
+    <Container sx={{backgroundColor: "#f4cb00", height: "100vh", textAlign: " center", justifyContent: "center"}}>
+        <Typography 
+        sx={{ 
+        marginTop: "56px",
+        fontFamily: "Poppins-Medium"}}>
+          <Box position="absolute"left="22px"top="55px" ml="21px">
+          <BackArrow />
+          </Box>
+
+          Leaderboard UT Fresh</Typography>
+        {/* <Datatable /> */}
+        <ToggleButtonGroup
+            value={value}
             exclusive
             onChange={handleChange}
             aria-label="Platform"
-            className={Styles.container}
+            // className='d-flex'
+            // className={Styles.container}
+            // className={Styles.button}
+            sx={{paddingTop: "4.2px", width: "170px", height: "26px", position: "relative", left: "18px", marginBottom: "16px"}}
             >
-            <ToggleButton className={Styles.text} value="individual">Individual</ToggleButton>
-            <ToggleButton className={Styles.text} value="android">Team</ToggleButton>
+            <ToggleButton   value="individual">Individual</ToggleButton>
+            <ToggleButton   value="android">Team</ToggleButton>
             </ToggleButtonGroup>
-            <Avatar className={Styles.winner} src="assets/images/profil.jpg" />
-            <GoldMedal className={Styles.Goldmedal}/>
-            <Avatar className={Styles.winnersilver} src="assets/images/profil.jpg" />
-            <Avatar className={Styles.winnerbronze} src="assets/images/profil.jpg" />
-            </div>
+            <Box>
+            <Avatar className={Styles.winner} sx={{alignItems: "center", justifyContent: "center"}} src="assets/images/profil.jpg"/>
+            <Box position="relative" justifyContent="center" marginTop="20px">
+            <Typography sx={{fontFamily: "Poppins-SemiBold", fontSize: 12}}>DAD_Yohanes</Typography>
+            <Box sx={{ typography: 'body1', fontFamily: "SFUIDisplay-Medium" , fontSize: 12}}><Clock />82:01</Box>
+            <Box sx={{ typography: 'body2', fontFamily: "SFUIDisplay-Medium" , fontSize: 12}}>550</Box>
+            </Box>
+            </Box>
+            <Box sx={{ flexGrow: 1, backgroundColor: "#f4cb00"}}>
+      <Grid container spacing={16}
+      sx={{bottom: "80px", position: "relative"}}>
+        <Grid item xs sx={{mt: "20px"}}>
+          {/* <Winner2 /> */}
+        </Grid>
+        {/* <Grid item xs={6}>
+          <Avatar className={Styles.winner} sx={{Width: "99.17px", Height: "107.18px"}} src="assets/images/profil.jpg"/>
+        </Grid> */}
+        <Grid item xs sx={{mt: "60px", mr: "20px"}}>
+          {/* <Winner3 /> */}
+        </Grid>
+      </Grid>
+    </Box>
             
-        </>
-    )
-};
+        {/* <BasicTable /> */}
+        {/* <BasicTable /> */}
+        {/* <DenseTable2 /> */}
+    </Container>
+ )
+}
 
-export default Leaderboard;
+export default Leaderboard;
