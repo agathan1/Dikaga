@@ -3,17 +3,21 @@ import DenseTable from './Table'
 // import {Leaderboard} from './Leaderboard'
 import Leaderboard from './Leaderboard'
 import { BackArrow } from 'assets/icons'
+import { Link } from 'react-router-dom'
+import BasicTable from './Tabledata'
+import { Container, Stack } from '@mui/material'
+
+
 
 
 const Home = () => {
     return(
         <>
-            
-        <div className={Styles.header}>
-        {/* <BackArrow className={Styles.back}/> */}
+        <Stack sx={{ height: "100vh"}}>
             <Leaderboard />
-            <DenseTable />
-        </div>
+            {/* <DenseTable2 /> */}
+            {/* <BasicTable /> */}
+            </Stack>
         </>
         
     )
