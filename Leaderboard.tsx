@@ -35,7 +35,7 @@ const Leaderboard = () => {
         sx={{ 
         marginTop: "56px",
         fontFamily: "Poppins-Medium"}}>
-          <Box position="absolute"left="22px"top="55px" ml="21px">
+          <Box position="absolute"left="22px"top="55px" ml="35px">
           <BackArrow />
           </Box>
 
@@ -65,15 +65,28 @@ const Leaderboard = () => {
             <Box sx={{ flexGrow: 1, backgroundColor: "#f4cb00"}}>
       <Grid container spacing={16}
       sx={{bottom: "80px", position: "relative"}}>
-        <Grid item xs sx={{mt: "20px"}}>
+        {/* <Grid item xs sx={{mt: "20px"}}> */}
           {/* <Winner2 /> */}
-        </Grid>
-        {/* <Grid item xs={6}>
-          <Avatar className={Styles.winner} sx={{Width: "99.17px", Height: "107.18px"}} src="assets/images/profil.jpg"/>
-        </Grid> */}
-        <Grid item xs sx={{mt: "60px", mr: "20px"}}>
+        {/* </Grid> */}
+        <Box position="absolute"ml="110px" left="33px" top="100px">
+          {/* <Grid item > */}
+            <Avatar className={Styles.winner2}src="assets/images/profil.jpg"/>
+            <Typography fontSize="12px" fontFamily="Poppins-SemiBold" textAlign="center">Agathan</Typography>
+            <Box textAlign="center" sx={{ typography: 'body1', fontFamily: "SFUIDisplay-Medium" , fontSize: 12}}><Clock />82:01</Box>
+            <Box textAlign="center" sx={{ typography: 'body2', fontFamily: "SFUIDisplay-Medium" , fontSize: 12}}>550</Box>
+          {/* </Grid> */}
+        </Box>
+        <Box position="relative" top="130px" ml="130px" left="250px">
+        {/* <Grid > */}
+          <Avatar className={Styles.winner3}src="assets/images/profil.jpg"/>
+        <Typography textAlign="center"
+            fontSize="12px" 
+            fontFamily="Poppins-SemiBold">Aslam</Typography>
+            <Box textAlign="center" sx={{ typography: 'body1', fontFamily: "SFUIDisplay-Medium" , fontSize: 12}}><Clock />82:01</Box>
+            <Box textAlign="center" sx={{ typography: 'body2', fontFamily: "SFUIDisplay-Medium" , fontSize: 12}}>550</Box>
           {/* <Winner3 /> */}
-        </Grid>
+        {/* </Grid> */}
+        </Box>
       </Grid>
     </Box>
             
